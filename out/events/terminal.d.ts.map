@@ -1,0 +1,1 @@
+{"version":3,"file":"terminal.d.ts","sourceRoot":"","sources":["../../src/events/terminal.ts"],"names":[],"mappings":"AAAA;;GAEG;AAEH,OAAO,KAAK,MAAM,MAAM,QAAQ,CAAC;AACjC,OAAO,EAAE,aAAa,EAAyC,MAAM,UAAU,CAAC;AAEhF,wBAAgB,wBAAwB,CAAC,MAAM,EAAE,aAAa,EAAE,OAAO,GAAE,OAAc,GAAG,MAAM,CAAC,UAAU,EAAE,CAiE5G"}

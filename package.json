@@ -1,0 +1,80 @@
+{
+  "name": "codeIA-vscode-extension",
+  "displayName": "CodeIA Assistant",
+  "description": "Extension VS Code pour communiquer avec le moteur d'IA CodeIA",
+  "version": "0.1.0",
+  "publisher": "CodeIA",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "AI",
+    "Developer Tools"
+  ],
+  "keywords": [
+    "ai",
+    "assistant",
+    "codeIA",
+    "websocket"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeIA.startTracking",
+        "title": "CodeIA: Start Tracking"
+      },
+      {
+        "command": "codeIA.stopTracking",
+        "title": "CodeIA: Stop Tracking"
+      },
+      {
+        "command": "codeIA.showStatus",
+        "title": "CodeIA: Show Status"
+      }
+    ],
+    "configuration": {
+      "title": "CodeIA",
+      "properties": {
+        "codeIA.serverUrl": {
+          "type": "string",
+          "default": "ws://localhost:3000",
+          "description": "URL du serveur WebSocket CodeIA"
+        },
+        "codeIA.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Activer le suivi des événements"
+        },
+        "codeIA.captureTerminal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Capturer les événements du terminal"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.90.0",
+    "@types/ws": "^8.18.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "ws": "^8.14.0"
+  }
+}
